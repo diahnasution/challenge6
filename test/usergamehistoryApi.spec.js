@@ -51,14 +51,14 @@ describe('User Game History API Controller Testing', () => {
 //     expect(body.result.skor).toEqual('1;00')
 //   });
 
-test('Mengambil 1 data history', async () => {
-    const { body, statusCode } = await request(app).get('/api/user-game-history/1').set({ Authorization: token });
-    expect(statusCode).toEqual(200);
-    expect(body.message).toEqual('Valid Get User Game By Id');
-    expect(body.data.login_time).toEqual('2022-05-05T13:16:00.000Z');
-    expect(body.data.logout_time).toEqual('2022-02-09T04:22:11.000Z');
-    expect(body.result.skor).toEqual(100);
-  });
+// test('Mengambil 1 data history', async () => {
+//     const { body, statusCode } = await request(app).get('/api/user-game-history/1').set({ Authorization: token });
+//     expect(statusCode).toEqual(200);
+//     expect(body.message).toEqual('Valid Get User Game By Id');
+//     expect(body.data.login_time).toEqual('2022-05-05T13:16:00.000Z');
+//     expect(body.data.logout_time).toEqual('2022-02-09T04:22:11.000Z');
+//     expect(body.result.skor).toEqual(100);
+//   });
 
   test('User Game History ID Tidak Ada', async () => {
     const { body, statusCode } = await request(app).get('/api/user-game-history/100').set({ Authorization: token });
